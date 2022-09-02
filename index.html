@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>socialarch.com</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="animate.css">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/c421d17f0a.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<img src="insight.jpg" class="insight">
+		<h3 class="logo animated fadeInUp animate delay-1s" onclick='scrolldown()'>nomedahora.com </h3>
+
+		<div class="conteiner">
+			<div id="fadeouttoggle" class="content register animated fadeInDown animate delay-2s">
+				<h2 class="title">Crie a sua conta!</h2>
+				<form class="form" action="cadastro.php" method="GET">
+					<label class="label">
+						<i class="fas fa-user"></i>
+						<input id='focus' type="text" name="usuario" placeholder="Nome Completo" required>
+					</label>
+					<label class="label">
+						<i class="fas fa-envelope"></i>
+						<input type="email" name="email" placeholder="Seu Melhor Email" required>
+					</label>
+					<label class="label">
+						<i class="fas fa-key"></i>
+						<input type="password" name="senha" placeholder="Senha" required>
+					</label>
+					<button class='btn' type="submit">= Registrar = </button>
+				</form>
+				<button class="btn" onclick='toggleLogin()'> Já tenho uma conta </button>
+			</div>
+			<div  id="fadeintoggle" class="content login animated">
+				<h2 class="title">Bem-vindo!</h2>
+				<form class="form">
+					<label class="label">
+						<i class="fas fa-envelope"></i>
+						<input type="email" placeholder="Email" required>
+					</label>
+					<label class="label">
+						<i class="fas fa-key"></i>
+						<input type="password" placeholder="Senha" required>
+					</label>
+					<button class='btn'>Login</button>
+				</form>
+				<button class="btn" onclick='toggleRegister()'> Não tenho uma conta </button>
+			</div>
+			<div class="card">
+				<div class="tooltip">
+					<a class="cardLabel" href='https://www.instagram.com/rodrigocbsa/' target='_blank'>
+						<i class="fab fa-instagram"></i>
+						<span class="tooltipText">Manda um oi</span>
+					</a>
+				</div>
+				<div class="tooltip">
+					<a class="cardLabel" href='https://www.linkedin.com/in/rodrigo-arruda-a256711b4/' target='_blank'>
+						<i class="fab fa-linkedin-in"></i>
+						<span class="tooltipText">Saiba mais</span>	
+					</a>
+				</div>
+				<div class="tooltip">
+					<a class="cardLabel" href='https://www.youtube.com/c/Parrudo' target='_blank'>
+						<i class="fab fa-youtube"></i>
+						<span class="tooltipText">Fique por dentro</span>
+					</a>
+				</div>
+			</div>
+			<div class="doubleArrow animated bounceIn animate delay-1s" onclick="scrolldown()">
+				<i class="fas fa-angle-double-down animated heartBeat animate delay-4s"></i>
+			</div>
+			<p class="location animated fadeIn animate delay-1s">Arapongas (PR)</p>
+		</div>
+	
+		<div class="parallax">
+			<div class="about">
+				<h1 id='fadein1' class="">A nova rede social de nome dahora</h1>
+				<iframe id='fadein2' width="1000" height="500" src="https://www.youtube.com/embed/H0cZmykv_Gk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<button id="fadein3" class="btn btn2" onclick='scrolltop()'>Ainda não criou uma conta? Te espero lá! </button>
+			</div>
+		</div>
+	</body>
+	<script>
+		window.onscroll = scroll;
+		function scroll(){
+			document.getElementById('fadein1').classList.add('animated', 'fadeInUp');
+			document.getElementById('fadein2').classList.add('animated', 'fadeInUp');
+			document.getElementById('fadein3').classList.add('animated', 'fadeInUp', 'animate', 'delay-1s');
+		};
+		function scrolltop(){
+			window.scrollTo(0, 0);
+			document.getElementById('focus').focus();
+		};
+		function scrolldown(){
+			window.scrollTo(0, 1000);
+		};
+
+		function toggleLogin(){
+			var element = document.getElementById('fadeouttoggle');
+			element.classList.remove('fadeInDown', 'animate', 'delay-2s');
+			var element2 = document.getElementById('fadeintoggle');
+			element2.classList.remove('fadeOutDown');
+
+			document.getElementById('fadeouttoggle').classList.add('fadeOutUp');
+			var x = document.getElementById('fadeintoggle');
+			x.style.display = 'flex';
+			document.getElementById('fadeintoggle').classList.add('fadeInUp');
+		}
+
+		function toggleRegister(){
+			var element = document.getElementById('fadeintoggle');
+			element.classList.remove('fadeInUp');
+			var element2 = document.getElementById('fadeouttoggle');
+			element2.classList.remove('fadeOutUp');
+
+			document.getElementById('fadeintoggle').classList.add('fadeOutDown');
+			var y = document.getElementById('fadeouttoggle');
+			y.style.display = 'flex';
+			document.getElementById('fadeouttoggle').classList.add('fadeInDown');
+		}
+	</script>
+</html>
